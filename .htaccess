@@ -1,0 +1,17 @@
+Options -Indexes
+RewriteEngine On
+
+# The app's existing links use /famco-store/public. Keep those links working
+# when the project files are uploaded directly into InfinityFree's htdocs.
+RewriteRule ^famco-store/public/?$ public/index.php [L]
+RewriteRule ^famco-store/public/(.*)$ public/$1 [L]
+
+# Serve the storefront from the domain root.
+RewriteRule ^$ public/index.php [L]
+
+# Keep application code, database scripts, and bundled libraries private.
+RewriteRule ^(config|src|db|PHPMailer-master)(/|$) - [F,L,NC]
+RewriteRule (^|/)\.(git|aws|agents|codex)(/|$) - [F,L,NC]
+
+# Never execute uploaded files as PHP.
+RewriteRule ^public/uploads/.*\.(php[0-9]?|phtml|phar)(/|$) - [F,L,NC]

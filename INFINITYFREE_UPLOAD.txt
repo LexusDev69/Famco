@@ -1,0 +1,9 @@
+﻿FAMCO STORE - INFINITYFREE UPLOAD
+
+1. Open config/hosting.local.php and replace PASTE_YOUR_INFINITYFREE_MYSQL_PASSWORD_HERE with your MySQL password from the InfinityFree control panel.
+2. Upload the ZIP to your account's htdocs folder and extract it there. Extract the files directly into htdocs, not into an extra nested folder. Ensure .htaccess is present.
+3. In phpMyAdmin, select the database if0_43205112_famco and import db/schema.sql.
+4. Visit https://YOUR-DOMAIN/famco-store/public/setup.php once. Create the admin account and seed the catalog if desired.
+5. Sign in, change the admin password, then delete public/setup.php from the server.
+
+The archive contains the private hosting config with a password placeholder. Set the password before opening the site.
